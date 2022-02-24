@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des événements -
+	{{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/event/list.css') }}">
+{% endblock %}
+
+{% block body %}
+	<h1 class="eventtitle">Les événements</h1>
+	<div class="container-sm">
+		<div class="createsearchevent">
+			<div class="create">
+				<a class="createevent" href="{{ path('event_new') }}">
+					Créer un événement
+				</a>
+			</div>
+
+			<div class="searchevent">
+				{{ form_start(searchForm) }}
+
+				{{ form_row(searchForm.query) }}
+				{{ form_row(searchForm.submit) }}
+
+				{{ form_end(searchForm) }}
+			</div>
+		</div>
+		<br>
+
+		<p class="text-center">
+			Liste des événements disponibles postés sur GAMEET par les membres :
+			<br>
+			Pour créer un événement, il faut d'abord te connecter ou t'inscrire sur GAMEET
+		</p>
+		<hr>
+		<div class="events">
+			{% for event in events %}
+				<article class="card-body">
+					
+					<div>
+						<h2 class="card-title">{{ event.name }}</h2>
+						{% if event.endAt < date() %}
+							{% set statusText='Passé' %}
+							{% set statusColor='red' %}
+						{% elseif event.startAt < date() %}
+							{% set statusText='En cours' %}
+							{% set statusColor='blue' %}
+						{% else %}
+							{% set statusText='À venir' %}
+							{% set statusColor='green' %}
+						{% endif %}
+						<span class="event-status {{ statusColor }}">
+							{{ statusText }}
+						</span>
+						{% include "components/event-media.html.twig" %}
+						<p>Commence le :
+							{{ event.startAt|date('d/m/Y à h\\hi') }}</p>
+						<p class="card-text">{{ event.description|slice(0, 80) }}
+							...</p>
+						<p>Fini le :
+							{{ event.endAt|date('d/m/Y à h\\hi') }}</p>
+					</div>
+					<div>
+						<a href="{{ path('event_show', {id: event.id}) }}">En savoir plus</a>
+					</div>
+				</article>
+			{% endfor %}
+		</div>
+		<div class="paginationnav">
+			{{ knp_pagination_render(events) }}
+		</div>
+	</div>
+{% endblock %}

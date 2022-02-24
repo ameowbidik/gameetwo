@@ -1,0 +1,127 @@
+@import url('http://fonts.googleapis.com/css?family=Quicksand:300');
+html, body{
+    margin:0;
+    padding: 0;
+    height: 100%;
+    background-color: #000009;
+    font-family: 'Quicksand', sans-serif;
+
+}
+main{
+    display: flex;
+    height:100%;
+    justify-content: center;
+    align-items: center;
+    margin:3%;
+}
+div{
+    display: flex;
+    margin: 5px;
+    font-size: 14px;
+    flex-direction: column;
+
+}
+.text-center{
+    font-size: 18px;
+}
+input{
+    border:none;
+    background-color: black;
+    border-bottom: 1px solid rgb(79, 80, 79);
+    width: 500px;
+    color: rgb(175, 173, 171);
+}
+
+.container-md{
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+form input, form textarea {
+font-size: 1.4rem;
+width: 300px;
+}
+
+.rf{
+    margin: 2px;
+    padding: 5px;
+    border-radius:5% ;
+    margin-left: 15%;
+    justify-content: center;
+    flex-direction: column;
+}
+form textarea {
+    box-sizing: border-box;
+    width: 100%;
+    resize: none;
+}
+
+input[type="file"], input[type=date] {
+    cursor : pointer;
+}
+
+input[type="file"] {
+    width: 500px;
+}
+
+form input, form textarea {
+font-size: 1.2rem;
+}
+
+form textarea {
+    box-sizing: border-box;
+    width: 100%;
+    resize: none;
+}
+label{
+    color: rgb(255, 255, 255);
+    flex-direction: column;
+}
+.lien-oubli{
+    margin-left: 10px;
+    text-decoration: none;
+    color: rgb(248, 246, 247);
+}
+.lien-oubli:hover{
+    color: #defff2;
+}
+.button{
+    margin: 0;
+    color: #000009;
+    background-color: #DEFFF2;
+    text-decoration: none;
+    border-radius: 10px 0px 10px 10px;
+    padding: 5px 25px;
+    font-size: 1rem;
+    width: 300px;
+    border: none;
+}
+
+.button:hover {
+    transform: scaleX(1.02);
+}
+
+/* ContactFormulaire */
+h1{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 50px;
+    color: #DEFFF2;
+    width:auto;
+}
+.formcontainer{
+    width: 600px;
+    align-items: center;
+    justify-content: center;
+}
+.required{
+    font-weight: bold;
+}
+#contact_message{
+    background-color: #000009;
+    color: #defff2;
+    width: 300px;
+    height:150px;
+}

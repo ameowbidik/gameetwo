@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Recherche un joueur-
+	{{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/components/form.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/user/list.css') }}">
+{% endblock %}
+
+{% block body %}
+	<h1>Rechercher un joueur</h1><br>
+	<div class="container-sm">
+	<div class="example-wrapper">
+		<p>Recherche un joueur par son pseudo, ou filtre par le jeu et le support.</p>
+		<p>Accède à son Profil Joueur et voir ce qu'il a publié.</p>
+		<p>Pour entrer en contact avec lui ou elle, tu dois au préalable t'inscrire ou te connecter sur Gameet.</p>
+	</div>
+	{{ form_start(searchForm) }}
+	<div class="row d-flex justify-content-left">
+			{{ form_end(searchForm) }}
+	</div>
+	</div>
+{% endblock %}

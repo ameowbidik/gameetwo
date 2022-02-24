@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mon profil
+{% endblock %}
+
+{% block stylesheets %}
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<link rel="stylesheet" href="{{ asset('css/user/profil.css') }}">
+{% endblock %}
+
+{% block body %}
+	<div class="container-sm">
+		<div class="col">
+			<h1>Profil de:
+				{{ app.user.nickname }}</h1>
+		</div>
+		<div class="row row-cols-2">
+				<div class="col">Nom:
+				</div>
+				<div class="col">{{ app.user.lastname }}</div>
+				<div class="col">Prénom:
+				</div>
+				<div class="col">{{ app.user.firstname }}</div>
+				<div class="col">Pseudo:
+				</div>
+				<div class="col">{{ app.user.nickname }}</div>
+				<div class="col">Email:
+				</div>
+				<div class="col">{{ app.user.email }}</div>
+			
+
+			<div class="col-sm">
+				<a href="{{ path ('user_profil_modifier')}}" class="btn btn-primary" role="button" data-bs-toggle="button">Modifier le profil</a>
+				<a href="{{path ('user_pass_modifier')}}" class="btn btn-primary" role="button" data-bs-toggle="button">Modifier le Mot de Passe</a>
+			</div>
+		</div>
+		<hr>
+		<div class="cols-4">
+			<h2>
+				Evenements de {{ app.user.firstname}} {{ app.user.lastname }} ({{ app.user.ownedEvents|length }})
+			</h2>
+			{% for event in app.user.ownedEvents %}
+							<ul class="ulprofil">
+								<li class="liprofil">
+									<div class="cols">Titre: </div>
+									<div class="cols">{{ event.name }}</div>
+									<div class="cols"><a href="{{ path('event_edit', {id: event.id}) }}" class="btn btn-primary" role="button" data-bs-toggle="button">Modifier l'evenement</a></div>
+								</li>
+							</ul>	
+			{% endfor %}
+		</div>
+		<hr>
+		<div class="cols-4">
+			<h2>
+				Annonces de {{ app.user.firstname}} {{ app.user.lastname }} ({{ app.user.ownedAds|length }})
+			</h2>
+			<div class="adsde">
+			{% for ad in app.user.ownedAds %}
+			<ul class="ulprofil">
+				<li class="liprofil">
+					<div class="cols">Titre: </div>
+					<div class="cols">{{ ad.name }}</div>
+					<div class="cols"><a href="{{ path('event_edit', {id: ad.id}) }}" class="btn btn-primary" role="button" data-bs-toggle="button">Modifier l'annonce</a></div>
+				</li>
+			</ul>
+			{% endfor %}
+			</div>
+	</div>
+	{# <div class="suppcompte"><a href="{{path ('user_remove_profile')}}" class="btn btn-primary" role="button" data-bs-toggle="button">Supprimer mon compte</a></div> #}
+{% endblock %}

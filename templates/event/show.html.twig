@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+{{ event.name }} - {{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/event/show.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    <div class="card container-md">
+        <article class="card-body">
+        {% include "components/event-media.html.twig" %}
+            <div>
+                <h2 class="card-title">{{ event.name }}</h2>
+                <p>Commence le : {{ event.startAt|date('d/m/Y à h\\hi') }}</p>
+                <p class="card-text">{{ event.description }}</p>
+                <p>Fini le : {{ event.endAt|date('d/m/Y à h\\hi') }}</p>
+            </div>
+        </article>
+    </div>
+
+{% endblock %}

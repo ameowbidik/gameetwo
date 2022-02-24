@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    {{ hotnew.title }} - {{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/hotnew/show.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="card container-md">
+    <article class="card-body">
+        <div>
+            {% if hotnew.picture == null %}
+                {{ "" }}
+            {% else %}
+                <img class="card-img-top" src="{{ hotnew.picture }}" alt="{{ hotnew.title }}">
+            {% endif %}
+        </div>
+        <div>
+            <h2 class="card-title">{{ hotnew.title }}</h2>
+            <p>Publié le {{ hotnew.publishAt|date('d/m/Y à h\\hi') }}</p>
+            <p class="card-text">{{ hotnew.content }}</p>
+            <p>Créé le {{ hotnew.createAt|date('d/m/Y à h\\hi') }}</p>
+            <p class="card-text">Ajouté par {{ hotnew.user.nickname }}</p>
+        </div>
+    </article>
+</div>
+{% endblock %}

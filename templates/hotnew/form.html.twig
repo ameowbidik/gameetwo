@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+une actualité - {{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/component/form.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    {{form_start(form)}}
+
+        <div class="container-md">
+            <h1>
+                Création d'une actualité
+            </h1>
+            <div class="col-4">
+                {{ form_row(form.title) }}
+                {{ form_row(form.content) }}
+                {{ form_row(form.picture) }}
+                {{ form_row(form.create_at) }}
+                {{ form_row(form.publish_at) }}
+                {{ form_row(form.submit) }}
+            </div>
+    
+    {{ form_end(form) }}
+{% endblock %}

@@ -1,0 +1,32 @@
+p, .card, a {
+    color: #DEFFF2;
+}
+
+.card {
+    background-color: #000009;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-text {
+    margin-bottom: 10px;
+    width: 400px;
+}
+
+p {
+    margin: 0;
+}
+
+.text-space {
+    padding-top: 20px;
+    display: block;
+}
+main{
+    margin-top:0;
+    max-height: 100vh;
+    min-height: 100vh;
+}
+footer{
+    margin-bottom: 0;
+}

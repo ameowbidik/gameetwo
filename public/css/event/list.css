@@ -1,0 +1,189 @@
+@import url('http://fonts.googleapis.com/css?family=Quicksand:300');
+body{
+    font-family: 'Quicksand', sans-serif;
+}
+a{
+    color: #DEFFF2;
+}
+main{
+    flex-direction: column;
+    margin-top: 70px;
+}
+.eventtitle{
+    margin-left: 10px;
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #f1f1f1;
+    font-weight: bold;
+}
+.container-sm{
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    margin-right: 25%;
+    margin-bottom: auto;
+    width: 100vh;
+    border: 2px solid #D68FD6;
+    margin: 5px;
+    padding: 5px;
+}
+
+input[type="search"] {
+    width: 300px;
+}
+.create a{
+    color: #f1f1f1;
+    font-size: 20px;
+    text-decoration: none;
+}
+.text-center{
+    text-align: center;
+    font-size: 15px;
+    padding: 10px;
+}
+
+.createsearchevent{
+    display: flex;
+    padding: 5px;
+    margin: 10px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+form{
+    display: flex;
+    flex-direction: row;
+    
+}
+hr{
+    color: #D68FD6;
+    border: 1px solid #D68FD6;
+    width: 50%;
+    opacity: 1;
+    margin-left: 30%;
+}
+.border {
+    width: 100vh;
+    border: 1px solid #D68FD6!important;
+}
+.events{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card{
+    background-color: #000009;
+}
+.card-text{
+    font-size: 14px;
+    margin-bottom: 10px;
+    width: 200px;
+}
+.card-title{
+    font-size: 18px;
+}
+.card-body{
+    font-size: 14px;
+    width: 250px;
+}
+.card-body {
+    flex: 1 1 auto;
+    padding: 1rem 1rem;
+}
+
+
+.text-space{
+    padding-top: 20px;
+    display: block;
+}
+a{
+    text-decoration: none;
+    color: #effbf6;
+}
+a:hover{
+    color: #0FF4C6;
+    transform: scaleX(1.02);
+}
+
+.card .card-body{
+    position: relative;
+}
+
+.card .card-body .event-status{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+}
+.event-status.red{
+    background-color: #c0392b;
+}
+.event-status.blue{
+    background-color: #3498db;
+}
+.event-status.green{
+    background-color: #27ae60;
+}
+
+/* PAGINATION */
+
+.pagination{
+    font-family:'Quicksand';
+    font-weight: bold;
+    display:flex;
+    margin:auto;
+    padding:5px;
+    border-radius: 50px;
+    background-color: black;
+    width: 500px;
+    justify-content: center;
+    align-items: center;
+}
+.page{
+    display: flex;
+    height: 45px;
+    width:45px;
+    justify-content: center;
+    align-items: center;
+}
+span{
+    margin: 1px;
+}
+.first{
+    margin-left: 1px;
+    
+}
+.first, .next, .previous, .last{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+}
+.current{
+    display: flex;
+    height: 35px;
+    width:35px;
+    justify-content: center;
+    align-items: center;
+    background-color: #32ccc4;
+    border-radius: 25px 25px 25px 25px;
+    color: black;
+    
+}
+.next a, .last a, .first a, .previous a{
+    background-color: #32ccc4;
+    padding:0 15px;
+    color: black;
+}
+.first a{
+    border-radius:25px 5px 5px 25px;
+}
+.previous a, .next a {
+    border-radius: 25px 25px 25px 25px;
+    width:auto;
+
+}
+.last a{
+    border-radius: 5px 25px 25px 5px;
+}

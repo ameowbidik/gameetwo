@@ -1,0 +1,85 @@
+{# {% extends 'base.html.twig' %} #}
+
+{% block title %}
+	<title>Gameet
+	</title>
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/main/index.css') }}">
+{% endblock %}
+
+{% block mainClasses %}{% endblock %}
+
+{% block body %}
+{% for message in app.flashes('message') %}
+			<div class="alert alert-success" role="alert">
+				{{ message }}
+			</div>
+		{% endfor %}
+	<div class="lignes">
+		<div class="l1"></div>
+		<div class="l2"></div>
+	</div>
+
+	<div class="container-first">
+		<h1>GAMEET
+			<br><span>et les joueurs</span>
+			<style>
+			h1{
+				margin-top:150px;
+			}
+			</style>
+		</h1>
+		<div class="container-btns">
+
+			{% if app.user %}
+			<button class="btn-first">
+					<a href="{{ path('profil_') }}" class="navlink">
+						<i class="fas fa-user-astronaut"></i>
+							{{ app.user.nickname }}
+					</a>
+			</button>
+			<button class="btn-first">		
+					<a href="{{ path('logout') }}" class="navlink">Déconnexion</a>
+			</button>
+			</li>
+			<li>		
+				{% else %} 
+					<button class="btn-first">
+						<a href="{{ path('login_') }}" class="navlink">Connexion</a>
+					</button>
+			</li>
+			<li>		
+						<button class="btn-first">
+							<a href="{{ path('app_register') }}" class="navlink">Inscription</a>
+						</button>
+				{% endif %}
+				{# <a href="{{ path('login_') }}">
+					<button class="btn-first b1">Connexion</button>
+				</a>
+				<a href="{{ path('app_register') }}">
+					<button class="btn-first b2">Inscription</button>
+				</a> #}
+			
+		</div>
+	</div>
+
+	<div class="arcades">
+		<div class="arcade">
+		<a href="{{ path('ad_list') }}"><h2 class="h2" data-text="Annonces">Annonces</h2></a>
+			<a href="{{ path('ad_list') }}"><img src="../images/img1.png" height="200px" width="150px" alt="arc1"/></a>
+		</div>
+		<div class="arcade">
+		<a href="{{ path('event_list') }}"><h2 class="h2" data-text="Evenements">Evenements</h2></a>
+			<a href="{{ path('event_list') }}"><img src="../images/img2.jpg" height="200px" width="150px" alt="arc2"/></a>
+		</div>
+		<div class="arcade" >
+		<a href="{{ path('hotnew_list') }}"><h2 class="h2" data-text="Actus">Actus</h2></a>
+			<a href="{{ path('hotnew_list') }}"><img src="../images/img3.png" height="200px" width="150px" alt="arc3"/></a>
+		</div>
+	</div>
+
+	{% block javascripts %}{% endblock %}
+	<script src="{{ asset('js/app.js') }}"></script>
+{% endblock %}

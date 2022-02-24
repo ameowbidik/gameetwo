@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+ {{ isNew ? 'Créer' : 'Modifier' }} un événement {{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/component/form.css') }}">
+{% endblock %}
+
+{% block body %}
+
+    {{form_start(form)}}
+
+        <div class="container-md">
+            <h1>
+                Création d'un événement
+            </h1>
+            <div class="col-4">
+                {{ form_row(form.name) }}
+                {{ form_row(form.pictureFile) }}
+                {{ form_row(form.pictureUrl) }}
+                {{ form_row(form.description) }}
+                {{ form_row(form.start_at) }}
+                {{ form_row(form.end_at) }}
+                {{ form_row(form.submit) }}
+            </div>
+    
+    {{ form_end(form) }}
+{% endblock %}

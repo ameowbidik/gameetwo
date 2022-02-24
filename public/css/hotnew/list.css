@@ -1,0 +1,157 @@
+@import url('http://fonts.googleapis.com/css?family=Quicksand:300');
+
+body{
+    font-family: 'Quicksand', sans-serif;
+}
+main{
+    flex-direction: column;
+    margin-top:70px;
+}
+.hotnewtitle{
+    margin-left:10px;
+    text-transform: uppercase;
+    font-size: 30px;
+    color: #f1f1f1;
+    font-weight: bold;
+    
+}
+.container-sm {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    margin-right: 25%;
+    margin-bottom: auto;
+    width: 100vh;
+    border: 2px solid #D68FD6;
+    margin: 5px;
+    padding: 5px;
+}
+
+form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: black;
+    border:none;
+}
+.hotnews{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card {
+    display: flex;
+    background-color: #000009;
+} 
+.card-text {
+    font-size: 14px;
+    margin-bottom: 10px;
+    width: 200px;
+}
+.card-title{
+    font-size: 18px;
+}
+.card-body{
+    flex: 1 1 auto;
+    font-size: 14px;
+    width: 250px;
+}
+a:hover{
+    text-decoration: none;
+    color: #0FF4C6;
+    transform: scaleX(1.02);
+}
+a{
+    text-decoration: none;
+    color: #effbf6;
+}
+input[type="search"] {
+    width: 300px;
+}
+hr {
+    color: #D68FD6;
+    border: 1px solid #D68FD6;
+    width: 400px;
+    opacity: 1;
+    margin-left: 30%;
+}
+
+.card-text{
+    margin-bottom: 10px;
+    width: 400px;
+}
+.card-body {
+    flex: 1 1 auto;
+    padding: 1rem 1rem;
+}
+.text-space{
+    padding-top: 20px;
+    display: block;
+}
+.text-center{
+    font-size: 15px;
+}
+a:hover{
+    color: #0FF4C6;
+    transform: scaleX(1.02);
+}
+ /* //pagination//  */
+
+.pagination{
+    font-family:'Quicksand';
+    font-weight: bold;
+    display:flex;
+    margin:auto;
+    padding:5px;
+    border-radius: 50px;
+    background-color: black;
+    width: 500px;
+    justify-content: center;
+    align-items: center;
+}
+.page{
+    display: flex;
+    height: 45px;
+    width:45px;
+    justify-content: center;
+    align-items: center;
+}
+span{
+    margin: 1px;
+}
+.first{
+    margin-left: 1px;
+    
+}
+.first, .next, .previous, .last{
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+}
+.current{
+    display: flex;
+    height: 35px;
+    width:35px;
+    justify-content: center;
+    align-items: center;
+    background-color: #32ccc4;
+    border-radius: 25px 25px 25px 25px;
+    color: black;
+    
+}
+.next a, .last a, .first a, .previous a{
+    background-color: #32ccc4;
+    padding:0 15px;
+    color: black;
+}
+.first a{
+    border-radius:25px 5px 5px 25px;
+}
+.previous a, .next a {
+    border-radius: 25px 25px 25px 25px;
+    width:auto;
+
+}
+.last a {
+    border-radius: 5px 25px 25px 5px;
+}

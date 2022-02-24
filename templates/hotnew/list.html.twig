@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des actualités -
+	{{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/hotnew/list.css') }}">
+{% endblock %}
+
+{% block body %}
+	<h1 class="hotnewtitle">
+		Les actualités
+	</h1>
+	<div class="container-sm">
+		<div class="searchhotnew">
+			<div class="d-flex justify-content-center">
+				{{ form_start(searchForm) }}
+
+				{{ form_row(searchForm.query) }}
+				{{ form_row(searchForm.submit) }}
+
+				{{ form_end(searchForm) }}
+			</div>
+		</div>
+		<br>
+
+		<p class="text-center">
+			Toute l'acualité du jeu vidéo rien que pour toi sur GAMEET
+			<br>
+			Si toi aussi tu veux t'exprimer, connecte toi ou inscrit toi !
+		</p>
+        <hr>
+		<div class="hotnews">
+			{% for hotnew in hotnews %}
+				<article class="card-body">
+					<div class="row">
+						{% if hotnew.picture == null %}
+							{{ "" }}
+						{% else %}
+							<img class="card-img-top" src="{{ hotnew.picture }}" alt="{{ hotnew.title }}">
+						{% endif %}
+					</div>
+					<div class="row">
+						<h2 class="card-title">{{ hotnew.title }}</h2>
+						<p>Publié le
+							{{ hotnew.publishAt|date('d/m/Y à h\\hi') }}</p>
+						<p class="card-text">{{ hotnew.content }}</p>
+						<p>Créé le
+							{{ hotnew.createAt|date('d/m/Y à h\\hi') }}</p>
+						<p class="card-text">Ajouté par
+							{{ hotnew.user.nickname }}</p>
+						<div>
+						<a href="{{ path('hotnew_show', {id: hotnew.id}) }}">En savoir plus</a>
+						</div>
+					</div>
+				</article>
+			{% endfor %}
+            </div>
+			<div class="paginationnav">
+				{{ knp_pagination_render(hotnews) }}
+			</div>
+		
+	{% endblock %}

@@ -1,0 +1,47 @@
+<header>
+	<nav>
+		<div class="logo">
+			<i class="fas fa-gamepad fa-3x"></i>
+		</div>
+		<div class="toggle">
+			<i class="fas fa-bars ouvrir" ></i>
+			<i class="fas fa-times fermer"></i>
+		</div>
+		<ul class="menu">
+			<li>
+				<a href="{{ path('main_index') }}" class="navlink">Accueil</a>
+			</li>
+			<li>
+				<a href="{{ path('ad_list') }}" class="navlink">Annonces</a>
+			</li>
+			<li>
+				<a href="{{ path('event_list') }}" class="navlink">Événements</a>
+			</li>
+			<li>
+				<a href="{{ path('hotnew_list') }}" class="navlink">Actualités</a>
+			</li>
+			<li>
+				{% if app.user %}
+					<a class="link-green space" href="{{ path('profil_') }}" class="navlink">
+						<i class="fas fa-user-astronaut"></i>
+							{{ app.user.nickname }}
+					</a>
+					<a class="link-green" href="{{ path('logout') }}" class="navlink">Déconnexion</a>
+			</li>
+			<li>		
+				{% else %} 
+					<button class="btn btn-secondary">
+						<a href="{{ path('login_') }}" class="navlink">Connexion</a>
+					</button>
+			</li>
+			<li>		
+						<button class="btn btn-secondary">
+							<a href="{{ path('app_register') }}" class="navlink">Inscription</a>
+						</button>
+				{% endif %}
+			</li>
+		</ul>
+		
+	</nav>
+
+</header>

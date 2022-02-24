@@ -1,0 +1,10 @@
+<div class="notification-manager">
+    {% for level, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="notification n-{{ level }}">
+                <span>{{ message }}</span>
+                <i class="fas fa-times notification-close"></i>
+            </div>
+        {% endfor %}
+    {% endfor %}
+</div>

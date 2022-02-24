@@ -1,0 +1,4 @@
+{% if event.picture matches '{^(http|https)://}' %}
+	<img class="card-img-top" src="{{ event.picture }}" alt="{{ event.name }}">
+{% else %}
+	<img src="{{ asset('uploads/' ~ event.picture) }}" alt={{ event.name }} {% endif %}

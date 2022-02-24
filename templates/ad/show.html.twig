@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ ad.name }}
+	-
+	{{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/ad/show.css') }}">
+{% endblock %}
+
+{% block body %}
+	<div class="card container-md">
+		
+		<article class="card-body">
+		{% include "components/ad-media.html.twig" %}
+			<div>
+				<h2 class="card-title">
+					<p class="card-text">{{ ad.description }}</p>
+					<p>Ajouté par
+						{{ ad.owner.nickname }}</p>
+				</div>
+			</article>
+	{% endblock %}

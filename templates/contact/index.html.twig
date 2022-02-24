@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Contactez-nous
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/component/form.css') }}">
+{% endblock %}
+
+{% block body %}
+
+	{# {% if form is defined %} #}
+	<div class="formcontainer">
+		{{ form_start(form) }}
+			<h1>Contactez-nous</h1>
+			<div class="form-row">
+				{{ form_row(form.email) }}
+				{{ form_row(form.message) }}
+				{{ form_row(form.submit) }}
+			</div>
+		{{ form_end(form) }}
+	</div>
+	{# {% endif %} #}
+{% endblock %}

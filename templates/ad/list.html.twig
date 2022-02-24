@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des annonces -
+	{{ parent() }}
+{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/ad/list.css') }}">
+{% endblock %}
+
+{% block body %}
+	<h1 class="adtitle">Les annonces</h1>
+	<div class="container-sm">
+		<div class="createsearchad">
+			<div class="create">
+				<a class="d-flex justify-content-center" href="{{ path('ad_new') }}">
+					Créer une annonce
+				</a>
+			</div>
+			<div class="searchad">
+				{{ form_start(searchForm)}}
+				{{ form_row(searchForm.query) }}
+				<div class="adformbtnsub">
+					{{ form_row(searchForm.submit) }}
+				</div>
+				{{ form_end(searchForm) }}
+			</div>
+		</div>
+		<br>
+
+		<p class="text-center">
+			Retrouve ici les annonces des membres de la communauté Gameet
+			<br><span class="text-space"></span>
+			Tu trouveras ici les annonces que tu cherches.
+		</p>
+		<hr>
+		<div class="ads">
+			{% for ad in ads %}
+				<article class="card-body">
+					<div>
+						{% include "components/ad-media.html.twig" %}
+						<h2 class="card-title">{{ ad.name }}</h2>
+						<p class="card-text">{{ ad.description|slice(0, 80) }}
+							...
+						</p>
+						<p>Ajouté par
+							{{ ad.owner.nickname }}
+						</p>
+						<a href="{{ path('ad_show', {id: ad.id}) }}">En savoir plus</a>
+					</div>
+				</article>
+			{% endfor %}
+		</div>
+		<div class="paginationnav">
+			{{ knp_pagination_render(ads) }}
+		</div>
+	</div>
+{% endblock %}

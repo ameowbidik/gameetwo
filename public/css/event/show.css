@@ -1,0 +1,21 @@
+main{
+    margin-top:5%;
+}
+body{
+    height: 100vh;
+}
+
+.card {
+    background-color: #000009;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-text {
+    margin-bottom: 10px;
+}
+.text-space {
+    padding-top: 20px;
+    display: block;
+}

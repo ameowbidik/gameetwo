@@ -1,0 +1,8 @@
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/ad/list.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/ad/show.css') }}">
+{% endblock %}
+{% if ad.picture matches '{^(http|https)://}' %}
+	<img class="card-img-top" src="{{ ad.picture }}" alt="{{ ad.name }}">
+{% else %}
+	<img class="card-img-top-up" src="{{ asset('uploads/' ~ ad.picture) }}" width="100%" height="100%" alt={{ ad.name }} {% endif %}
